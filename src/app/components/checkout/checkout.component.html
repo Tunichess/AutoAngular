@@ -1,0 +1,303 @@
+<div class="car" style="height: 100%;">
+
+    <app-banner title="CHECKOUT"></app-banner>
+
+
+    <div class="container">
+        <!-- <div class=" row title">
+        <h3>CHECKOUT</h3>
+    </div> -->
+
+        <div *ngIf="this.showingProducts.length<1" class="height" style="text-align: center;">
+            <div style="justify-content: center;padding-bottom: 0px;" class="saira white titleSection">
+                Your cart is empty!
+            </div>
+            <div style="justify-content: center;" class="saira white subtitleSection">
+                Please go shopping
+            </div>
+            <a style="margin-top: 10px;" [routerLink]="['/tyresearch']" class="btn buttonOrange  saira ">
+                <div> SHOPPING
+
+                </div>
+            </a>
+
+
+        </div>
+
+
+
+        <div *ngIf="this.showingProducts.length>0">
+            <div class="productArea display" style="margin-top: 2vh;">
+
+                <div class="line">
+                    <h5 class="saira white" style="margin-left: 2vh;">Product</h5>
+                    <h5 class="saira white" style="margin-right: 2vh;">Total</h5>
+
+
+                </div>
+                <hr>
+
+                <div class="line" *ngFor="let i of this.showingProducts">
+                    <p class="saira white description" style="font-weight: 500;margin-left: 2vh;">
+                        {{i.product.DescriptionShort + ' x' + i.ocurrences}}
+                    </p>
+                    <p class="saira white" class="item" style="margin-right: 2vh;">
+                        £ {{i.product.Price * i.ocurrences | number : '1.2-2'}}
+                    </p>
+
+                </div>
+
+
+                <!--<div class="line">
+                <p  class="saira white" style="font-weight: 500;margin-left: 2vh;">
+                    225/40R18 PIRELLI P7 92W XL CINTURATO
+                </p>
+                <p class="item saira white" style="margin-right: 2vh;">
+                    $150
+                </p>
+
+            </div>
+
+
+            <div class="line">
+                <p  class="saira white" style="font-weight: 500;margin-left: 2vh;">
+                    225/40R18 PIRELLI P-ZERO MOE RFT 92W XL
+                </p>
+                <p class="item saira white" style="margin-right: 2vh;">
+                    $150
+                </p>
+
+            </div> -->
+                <hr>
+                <div class="line">
+
+                    <p class="saira white" style="font-weight: 500;font-size: 20px;margin-left: 2vh;">
+                        Total
+                    </p>
+                    <p class="saira " style="font-weight: 500;font-size: 20px;color:#d16900;margin-right: 2vh;">
+                        £ {{this.total | number : '1.2-2'}}
+                    </p>
+                </div>
+            </div>
+
+            <div class="itemsContainer">
+                <div class="information" [formGroup]="checkoutForm">
+                    <div class="widthW" style="margin-top: 2vh;">
+                        <div clas="row">
+                            <h4 class="saira white subtitleSection">BILLING DETAILS</h4>
+
+                        </div>
+                        <div class="row details" style="margin-top: 2vh;">
+                            <div class="col grid ">
+
+                                <input type="text" style="width:250px;margin-right: 2.5vh;max-height: 27px;"
+                                    placeholder="First Name (required)*" formControlName="firstName">
+                                <span class="saira errorMessage" *ngIf="firstNameInvalid">{{this.simpleError}}</span>
+
+                            </div>
+
+                            <div class="col addMargin grid">
+
+                                <input type="text" style="width:250px;margin-right: 2.5vh;max-height: 27px;"
+                                    placeholder="Last Name (required)*" formControlName="lastName">
+                                <span class="saira errorMessage" *ngIf="lastNameInvalid">{{this.simpleError}}</span>
+                            </div>
+                        </div>
+                        <div class="row details" style="margin-top: 2vh;">
+                            <div class="col grid">
+
+
+                                <input type="text" class="w98" placeholder="Vehicle Registration Number" formControlName="vehicle">
+                                <span class="saira errorMessage" *ngIf="vehicleInvalid">{{this.simpleError}}</span>
+                            </div>
+                        </div>
+                        <!-- <div class="row details" style="margin-top: 2vh;">
+                            <div class="col grid">
+
+
+                                <input type="text" style="width:250px;margin-right: 2.5vh;max-height: 27px;"
+                                    placeholder="Town/City (required)*" formControlName="city">
+                                <span class="saira errorMessage" *ngIf="cityInvalid">{{this.simpleError}}</span>
+                            </div>
+                            <div class="col addMargin grid">
+
+
+                                <input type="text" style="width:250px;margin-right: 2.5vh;max-height: 27px;"
+                                    placeholder="Postcode/zip (required)*" formControlName="zip">
+                                <span class="saira errorMessage" *ngIf="zipInvalid">{{this.simpleError}}</span>
+                            </div>
+                        </div> -->
+                        <div class="row details" style="margin-top: 2vh;">
+                            <div class="col grid">
+                                <input type="text" style="width:250px;margin-right: 2.5vh;max-height: 27px;"
+                                    placeholder="Email Address (required)* " formControlName="email">
+                                <span class="saira errorMessage" *ngIf="emailInvalid">{{this.simpleError + ' '}} with an
+                                    email</span>
+                            </div>
+                            <div class="col grid addMargin">
+                                <input type="text" style="width:250px;margin-right: 2.5vh;max-height: 27px;"
+                                    (keypress)="numbersOnly($event)" maxlength="12" placeholder="Phone (required)* "
+                                    formControlName="phone">
+                                <span class="saira errorMessage" *ngIf="phoneInvalid">{{this.simpleError}}</span>
+                            </div>
+
+                        </div>
+
+
+
+                    </div>
+                    <div class="widthW marginT">
+                        <div clas="row" *ngIf="show">
+                            <h4 class="saira white subtitleSection">CARD DETAILS</h4>
+
+                        </div>
+
+                        <p class="accept saira white " *ngIf="show">We accept the following cards</p>
+                        <div style="display: flex;margin-bottom: 3vh;margin-left:3vh" *ngIf="show">
+                            <img src="../../../assets/visa.png" style="margin-right: 3vh" width="50" height="30">
+                            <img src="../../../assets/mastercard.png" width="50" height="30">
+                        </div>
+                        <div class="grid" *ngIf="show">
+                            <input #cardElement type="text" maxlength="16" (keypress)="numbersOnly($event)"
+                                style="width:310px;margin-top:2vh;" placeholder="Card number (required)* "
+                                formControlName="card">
+                            <span class="saira errorMessage" *ngIf="cardInvalid">{{this.simpleError}}</span>
+                            <span class="saira errorMessage" *ngIf="cardInvalidLength">CARD Number must have 16
+                                characters</span>
+                        </div>
+                        <div style="display:flex;" *ngIf="show">
+                            <div class="grid" style="max-width: 103px;">
+                                <input type="text" (keypress)="numbersOnly($event)" maxlength="2"
+                                    style="width:100px;margin-top:2vh;margin-right: 5px;max-height: 27px;"
+                                    placeholder="MM " formControlName="month">
+                                <span class="saira errorMessage" *ngIf="monthInvalid">{{this.simpleError}}</span>
+                                <span class="saira errorMessage" *ngIf="monthInvalidLength">MONTH must have 2
+                                    characters</span>
+                                <span class="saira errorMessage" *ngIf="monthInvalidNumber">MONTH must be between 01 &
+                                    12</span>
+                            </div>
+                            <div class="grid" style="max-width: 103px;">
+                                <input type="text" (keypress)="numbersOnly($event)" maxlength="2"
+                                    style="width:100px;margin-top:2vh;margin-right: 5px;max-height: 27px;"
+                                    placeholder="YY" formControlName="year">
+                                <span class="saira errorMessage" *ngIf="yearInvalid">{{this.simpleError}}</span>
+                                <span class="saira errorMessage" *ngIf="yearInvalidLenght">YEAR must have 2
+                                    characters</span>
+                            </div>
+                            <div class="grid" style="max-width: 103px;">
+                                <input maxlength="3" (keypress)="numbersOnly($event)"
+                                    style="width:100px;margin-top:2vh;max-height: 27px;" placeholder="CVC "
+                                    formControlName="cvc">
+                                <span class="saira errorMessage" *ngIf="cvcInvalid">{{this.simpleError}}</span>
+                                <span class="saira errorMessage" *ngIf="cvcInvalidLength">CVC must have 3
+                                    characters</span>
+                            </div>
+                        </div>
+
+                        <div style="display:flex;flex-wrap:wrap">
+                            <button (click)="checkout()" class="btn buttonOrange "
+                                style="margin-top:5vh;width:204.19px">
+                                <div *ngIf="!loading" class="saira" style="margin-bottom:0;margin-top: 2px;color:white">
+                                BOOK FITTING
+
+                                </div>
+                                <img *ngIf="loading" style="height:24px" src="../../../assets/loading2.gif">
+                            </button>
+                            <button [routerLink]="['/cart']" class="btn buttonOrange "
+                                style="margin-top:5vh;width:204.19px;margin-left:30px">
+                                <div class="saira" style="margin-bottom:0;margin-top: 2px;color:white">
+                                    VIEW CART
+
+                                </div>
+
+                            </button>
+
+                        </div>
+
+                        <button [routerLink]="['/tyresearch']" class="btn buttonOrange "
+                            style="margin-top:5vh;width:204.19px">
+                            <div class="saira" style="margin-bottom:0;margin-top: 2px;color:white">
+                                CONTINUE SHOPPING
+
+                            </div>
+
+                        </button>
+
+
+
+                    </div>
+                </div>
+                <div class="productArea width none" style="margin-top: 2vh;min-height: 600px;float:right">
+
+                    <div class="line">
+                        <h5 class="saira white" style="margin-left: 2vh;" class="saira white">Product</h5>
+                        <h5 class="saira white" style="margin-right: 2vh;" class="saira white">Total</h5>
+
+
+                    </div>
+                    <hr>
+
+
+
+                    <div class="line" *ngFor="let i of this.showingProducts">
+                        <p class="saira white " style="font-weight: 500;margin-left: 2vh;">
+                            {{i.product.DescriptionShort + ' x' + i.ocurrences}}
+                        </p>
+                        <p class="saira white" class="item" style="margin-right: 2vh;">
+                            £ {{i.product.Price * i.ocurrences | number : '1.2-2'}}
+                        </p>
+
+                    </div>
+
+                    <!-- 
+                <div class="line">
+                    <p class="saira white" style="font-weight: 500;margin-left: 2vh;">
+                        225/40R18 PIRELLI P7 92W XL CINTURATO
+                    </p>
+                    <p class="item saira white" style="margin-right: 2vh;">
+                        $150
+                    </p>
+
+                </div>
+
+
+                <div class="line">
+                    <p class="saira white" style="font-weight: 500;margin-left: 2vh;">
+                        225/40R18 PIRELLI P-ZERO MOE RFT 92W XL
+                    </p>
+                    <p class="item saira white" style="margin-right: 2vh;">
+                        $150
+                    </p>
+
+                </div>-->
+                    <hr>
+                    <div class="line">
+
+                        <p class="saira white" style="font-weight: 500;font-size: 20px;margin-left: 2vh;">
+                            Total
+                        </p>
+                        <p class="saira " style="font-weight: 500;font-size: 20px;color:#d16900;margin-right: 2vh;">
+                            £ {{this.total | number : '1.2-2'}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+    </div>
+    <div class="hm">
+
+    </div>
+</div>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-127299225-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-127299225-1');
+</script>

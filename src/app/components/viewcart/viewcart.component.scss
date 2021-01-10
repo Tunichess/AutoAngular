@@ -1,0 +1,200 @@
+.title{
+    padding-top:12vh;
+}
+.buttonOrange{
+    background:#f57c00;
+    color:white;
+    font-weight: 500;
+   border-radius: 2px;
+   outline: #f57c00;
+}
+
+.tableName{
+    margin-top: 5vh;
+    display:flex;
+    justify-content: space-between;
+}
+.itemsTitle{
+    margin-bottom: 0;
+    padding-bottom: 0;
+    padding-top: 10px;
+
+}
+
+.itemTitle{
+    margin-bottom: 0;
+    padding-bottom: 0;
+    margin-top: 2px;
+}
+
+.itemRow{
+    display: flex;
+    justify-content: space-between;
+    margin-left:10px;
+    margin-top: 5vh;
+    margin-bottom: 0;
+    margin-right: 10px;
+}
+
+.itemQuantity{
+    margin-left: 10px;
+}
+
+.quantity{
+    display:flex;
+}
+
+.buttonDelete{
+    background: white;
+    border:0;
+    height: 24px;
+}
+
+.pad{
+    margin-left:5px;
+  
+}
+
+.increment{
+    border: 1px solid #d9d9d9;
+    background: #ffffff;
+    outline:none;
+}
+
+.sizeButton{
+    width:40px;
+    height:30px;
+}
+
+.th{
+    font-size: 15px;
+    margin-bottom: 0;
+    color: gray;
+    font-weight: 500;
+    padding-bottom: 0;
+
+}
+.inputIncrement{
+    text-align:center;
+    width:50px;
+    height:30px;
+}
+
+.close{
+    border: none;
+    background: #ffffff;
+    outline:none;
+    float:left;
+}
+
+.tableItem{
+    font-weight: bolder;
+}
+
+.titleSection{
+    text-align: center;
+    font-weight: bold;
+    font-size:40px;
+    padding-bottom:20px;
+    padding-top:15px;
+}
+.white{
+    color:white;
+}
+
+.subtitleSection{
+    padding-top:0;
+    font-size: 25px;
+    font-weight: bold !important;
+}
+
+.descriptionSection{
+
+font-size: 18px;
+font-style:italic;
+}
+
+.car{
+    background:#1c1c1c;
+    margin-top:0;
+    padding-top:0;
+    height: auto;
+}
+
+
+@media 
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+/* Force table to not be like tables anymore */
+
+
+/* Hide table headers (but not display: none;, for accessibility) */
+// thead tr { 
+//     position: absolute;
+//     top: -9999px;
+//     left: -9999px;
+// }
+.car{
+    min-height:480px;
+}
+
+th{
+    padding-left:0;
+    padding-right: 1px !important;
+    text-align:center;
+    
+}
+
+tr { border: 1px solid #ccc; }
+
+td { 
+    /* Behave  like a "row" */
+    border: none;
+    border-bottom: 1px solid #eee; 
+    position: relative;
+    padding-left: 0; 
+}
+
+td:before { 
+    /* Now like a table header */
+    position: absolute;
+    /* Top/left values mimic padding */
+    top: 6px;
+    left: 6px;
+    width: 45%; 
+    padding-right: 10px; 
+    white-space: nowrap;
+}
+}
+
+.min{
+    display:none;
+}
+
+@media 
+only screen and (max-width: 460px){
+thead tr { 
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+}
+.quantity{
+    // display:block;
+    flex-direction: column-reverse;
+}
+.pm{
+    margin-top:-2px !important;
+}
+}
+
+@media 
+only screen and (max-width: 450px){
+.none{
+    display:none;
+}
+.min{
+    display:block;
+   
+}
+}

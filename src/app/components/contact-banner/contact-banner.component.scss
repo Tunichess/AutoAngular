@@ -1,0 +1,38 @@
+.white{
+    color:white;
+}
+
+.descriptionSection{
+
+    font-size: 18px;
+    text-align: center;
+}
+.icon{
+  
+    margin-right: 10px;
+    margin-left:15px;
+}
+
+a:hover{
+    color:#f49e00;
+    text-decoration: none;
+}
+
+
+.subtitleSection{
+    padding-top:2vh;
+    font-size: 20px;
+    font-weight: bold !important;
+}
+@media (max-width:600px){
+.icon{
+    margin-left:0px;
+}
+
+.address{
+    max-width: 310px;
+    // margin-left:-14px;
+    text-align:left !important;
+}
+
+}

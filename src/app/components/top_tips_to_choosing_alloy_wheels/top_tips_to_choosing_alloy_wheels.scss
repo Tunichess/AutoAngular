@@ -1,0 +1,108 @@
+
+.title{
+  margin-top:60px;
+  
+}
+p{
+  color:white;
+  
+}
+h3{
+  color:white;
+  
+}
+
+.orange{
+  color:orange;
+}
+
+.white{
+  color:white;
+}
+
+.img-fluid_1 { 
+  height: 100%;
+}
+
+.saira{
+  font-family: 'Saira', sans-serif;
+  letter-spacing: 0px;
+  word-spacing: 0px;
+  font-weight: 500;
+  text-decoration: none;
+  text-transform: none;
+}
+
+.titleSection{
+  font-size: 28px;
+  font-weight: 600 !important;
+}
+
+.descriptionSection{
+
+  font-size: 18px;
+  font-style:italic;
+}
+
+.subtitleSection{
+  padding-top:3vh;
+  font-size: 25px;
+  font-weight: bold !important;
+}
+
+.car{
+
+  background:#1c1c1c;
+ 
+}
+
+ul {
+  list-style: none;
+  padding-left:0;
+    }
+  
+    li{
+        font-style:italic;
+        font-size:18px;
+       
+        
+    }
+
+    .buttonOrange{
+      background:#f57c00;
+      color:white;
+      font-weight: 500;
+     border-radius: 2px;
+     outline: #f57c00;
+  }
+
+  a:hover{
+      color:#f49e00;
+  }
+
+  .icon{
+
+      margin-right: 10px;
+      margin-left:15px;
+  }
+
+
+  @media (max-width:600px){
+      .icon{
+          margin-left:0px;
+      }
+      
+      .address{
+          max-width: 310px;
+          // margin-left:-14px;
+          text-align:left !important;
+      }
+      
+      }
+  @media (max-width: 475px) { 
+      .title{
+          margin-top:30px;
+          
+      }
+  
+  }

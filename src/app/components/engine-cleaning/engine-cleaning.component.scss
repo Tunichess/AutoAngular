@@ -1,0 +1,91 @@
+
+.title{
+    margin-top:50px;
+    
+}
+
+.orange{
+    color:orange;
+}
+
+.white{
+    color:white;
+}
+
+
+.img-fluid_1 { 
+    height: 100%;
+  }
+  
+.saira{
+    font-family: 'Saira', sans-serif;
+    letter-spacing: 0px;
+    word-spacing: 0px;
+    font-weight: 500;
+    text-decoration: none;
+    text-transform: none;
+}
+
+.car{
+
+    background:#1c1c1c;
+  }
+
+  ul {
+    list-style: none;
+    padding-left:0;
+      }
+    
+      li{
+          font-style:italic;
+          font-size:18px;
+         
+          
+      }
+
+      .buttonOrange{
+        background:#f57c00;
+        color:white;
+        font-weight: 500;
+       border-radius: 2px;
+       outline: #f57c00;
+    }
+
+
+    .subtitleSection{
+        padding-top:3vh;
+        font-size: 25px;
+        font-weight: bold !important;
+    }
+
+.descriptionSection{
+
+    font-size: 18px;
+    text-align: center;
+}
+.minWidth{
+    min-width: 560px;
+    max-height:300px;
+}
+
+@media (max-width:1200px){
+    .minWidth{
+         min-width: 100%;
+        width:100%;
+        
+        // width: 100% !important;
+    }
+
+    .carousel-item img{
+        min-width:100% !important;
+        width:500px;
+    }
+   
+}
+
+@media (max-width:600px){
+    .minWidth{
+        max-height: 224px;
+        min-height: 224px;
+    }
+}

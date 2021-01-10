@@ -1,0 +1,42 @@
+.overflow{
+overflow-x:hidden !important;
+}
+.colImage{
+    flex: 0 0 50%;
+    max-width: 50%;
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    //  margin-left:20px !important;
+ 
+}
+img{
+    max-width: 100%;
+    height: auto;
+}
+.mh{
+    max-height: 300px ;
+}
+
+@media (max-width:600px){
+    .text{
+        max-width: 200px;
+    }
+
+    
+    .none{
+        display:none;
+    }
+.colImage{
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-left:0;
+}
+
+.mh{
+    max-height:224px;
+    min-height: 224px;
+}
+}

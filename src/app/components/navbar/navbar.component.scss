@@ -1,0 +1,222 @@
+.active a{
+    color: orange !important;
+  
+    border: 1px solid #f49e00;
+}
+a:hover {
+   color: #f49e00 !important;
+//    border-color: red;
+   border-bottom: 2px solid #f49e00;
+  }
+
+.navbar{
+    // border-bottom: 1px solid rgba(228,107,0,0.86);
+}
+
+
+.right{
+    float:right !important;
+    
+}
+.left{
+    left: -95px !important;
+}
+
+.nav-link{
+    font-size:14px !important;
+    padding-right:0 !important;
+    padding-left:0 !important;
+    margin-left:5px !important;
+}
+
+.dropdown-item{
+
+    font-size:14px !important;
+    padding-right:0;
+}
+
+.icon{
+    background:white;
+    // padding:5px;
+
+}
+
+.white{
+    color:white;
+}
+
+.icons{
+    margin-top:4px;
+    display:flex;
+}
+
+.icon-container{
+    width:28px;
+    height:28px;
+    background:white;
+    padding-bottom: 2px;
+    text-align: center !important;
+    vertical-align:middle !important;
+    &:hover{
+        // outline: 2px solid orange !important;
+        filter: brightness(0.5);
+        cursor:pointer;
+       }
+}
+
+
+.background{
+    background: #1c1c1c !important;
+    position: fixed;
+    //   top:35px;
+    width: 100%;
+    border-bottom: 1px solid black;
+}
+
+.contactBar{
+    height:35px;
+    background:#F49E00;
+    justify-content: space-between;
+    vertical-align:middle;
+    display:flex;
+      position:absolute;
+    width:100%;
+    z-index: 1 !important;
+}
+
+.numberMail{
+display:flex;
+margin-left:50px;
+margin-top:5px;
+}
+
+.icons{
+    margin-right: 50px;
+}
+
+.item{
+    display:flex;
+}
+
+
+
+.drop{
+    background: #1c1c1c !important;
+    color:white;  
+}
+.dropdown-item{
+    background: #1c1c1c !important;
+}
+
+.margin{
+    margin-right: 2vh;
+}
+
+
+.dropdown {
+    .dropdown-menu {
+        transition: all 0.5s;
+        overflow: hidden;
+        transform-origin: top center;
+        transform: scale(1,0);
+        display: block;
+    }
+    &:hover {
+        .dropdown-menu {
+            transform: scale(1);
+        }
+    }
+}
+
+::ng-deep .sticky-top{
+    z-index:1 !important;
+}
+@media (max-width: 992px) {
+
+    .navbar-collapse.collapsing .navbar-nav {
+        display: block;
+        position: fixed;
+        margin-top:55px;
+        top:0 !important;
+        bottom: 0;
+        right: -50%;
+       transition: all 0.2s ease;
+       
+    //    transition: right 0.35s ease;
+    background: #1c1c1c;
+    }
+    .left{
+        left:0 !important;
+    }
+
+    .contactBar{
+        display:none;
+    }
+    
+
+    .navbar-collapse.show .navbar-nav {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        margin-top:55px;
+        flex-direction: column;
+        height: auto;
+        width: 50%;
+        transition: right 0.35s ease;
+        // box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+        background: #1c1c1c;
+        z-index: 1 !important;
+    }
+
+    .background{
+        background: #1c1c1c !important;
+        top:0px;
+    }
+    .margin{
+        margin-right: 0;
+    }
+
+    a {
+        padding: 6px 8px 6px 16px;
+        text-decoration: none;
+        font-size: 25px;
+        color: white !important;
+        display: block;
+      }
+
+      .active a{
+        color: 1c1c1c !important;
+      
+        border: 1px solid #1c1c1c;
+    }
+    a:hover {
+       color: #f49e00 !important;
+    //    border-color: red;
+       border: 1px solid #f49e00;
+      }
+
+      .dropdown-menu {
+        float: none;
+        position: static;
+        padding: 0;
+        display: block;
+        &.show{
+            max-height: 500px;
+
+        }
+    }
+
+    .dropdown-menu {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s;
+    }
+    
+
+}
+
+.over:hover{
+    color:black !important;
+    text-decoration: none;
+}

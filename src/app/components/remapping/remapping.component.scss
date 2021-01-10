@@ -1,0 +1,80 @@
+.title{
+    margin-top:12vh;
+    
+}
+
+.orange{
+    color:orange;
+}
+
+.white{
+    color:white;
+}
+
+
+
+.saira{
+    font-family: 'Saira', sans-serif;
+    letter-spacing: 0px;
+    word-spacing: 0px;
+    font-weight: 500;
+    text-decoration: none;
+    text-transform: none;
+}
+
+.titleSection{
+    font-size: 28px;
+    font-weight: 600 !important;
+}
+
+.descriptionSection{
+    padding-top:5px;
+    font-size: 18px;
+  text-align: center;
+}
+
+.subtitleSection{
+    padding-top:3vh;
+    font-size: 25px;
+    font-weight: bold !important;
+}
+
+.car{
+
+    background:#1c1c1c;
+  }
+
+  ul {
+    list-style: none;
+    padding-left:0;
+      }
+    
+      li{
+          font-style:italic;
+          font-size:18px;
+         
+          
+      }
+
+      .buttonOrange{
+        background:#f57c00;
+        color:white;
+        font-weight: 500;
+       border-radius: 2px;
+       outline: #f57c00;
+    }
+
+.contact{
+    
+}
+
+.mh{
+    max-height: 300px;
+}
+
+@media (max-width:600px){
+    .mh{
+        max-height: 224px;
+        min-height: 224px;
+    }
+}

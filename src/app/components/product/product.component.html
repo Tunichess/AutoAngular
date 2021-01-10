@@ -1,0 +1,286 @@
+<div class="car" >
+<div class="container">
+    <div class=" row title">
+        <h3 class="saira white titleSection">{{this.product.DescriptionShort}}</h3>
+    </div>
+
+    <div class="row" style="margin-top:1vh">
+        <h3 class="saira white subtitleSection">{{this.product.Price |currency:"GBP":"symbol" }}</h3>
+    </div>
+    <div class="row">
+        <p class="saira white descriptionSection">{{this.product.DescriptionLong}}</p>
+    </div>
+    <hr>
+    <div class="row additions" style="margin-top:1vh;">
+        <p class="saira white descriptionSection">Availability: {{GetAvailability()}}</p>
+
+        <span class="buttonOrange spanC saira" >
+            DELIVERY DATE: 
+            {{this.product.DeliveryDate}}
+        </span>
+    </div>
+
+<div class="additions">
+    <div class="row center">
+        
+            <button [disabled]="this.quantity<1" (click)="remove()" class="increment sizeButton">
+                <i class="material-icons"  style="margin-top: 6px;">remove</i>
+            </button>
+            <input disabled class="increment inputIncrement" style="outline:none" [value]="this.quantity">
+            <button [disabled]="this.product.Stock - this.getOcurrences(this.product.ProductCode)<1" (click)="add()" class="increment sizeButton">
+                <i class="material-icons"  style="margin-top: 6px;">add</i>
+            </button>
+    
+            
+
+        
+        <button  [routerLink]="['/cart']" class="btn buttonOrange addButton">
+            <div class="saira"  style="margin-bottom:0;margin-top:4px;">VIEW CART</div>
+            <!-- <i  class="material-icons pad">add_shopping_cart</i> -->
+        </button>
+        
+
+ 
+    </div>
+    <button [routerLink]="['/tyresearch']" class="btn buttonOrange margintop">
+        <div class="saira"  style="margin-bottom:0;margin-top:0px;">CONTINUE SHOPPING</div>
+    </button>
+</div>
+    <hr>
+    <div class="row">
+        <h4 class="saira white subtitleSection">Details</h4>
+    </div>
+
+    <div class="row details" >
+        <div class="col md-3">
+            <ul>
+                <li style="display:flex;">
+                    <p style="font-weight: 600 !important;color:orange" class="saira white descriptionSection">
+                        Brand:
+                    </p>
+                    <p style="padding-left: 1vh;" class="saira white descriptionSection">
+                        {{ this.product.Attributes.Brand}}
+                    </p>
+
+                </li>
+                <li style="display:flex;">
+                    <p style="font-weight: 600 !important;color:orange" class="saira white descriptionSection">
+                        Size:
+                    </p>
+                    <p style="padding-left: 1vh;" class="saira white descriptionSection">
+                        {{ this.product.Attributes.Size}}
+                    </p>
+                </li>
+
+                <li style="display:flex;">
+                    <p style="font-weight: 600 !important;color:orange" class="saira white descriptionSection">
+                        Pattern:
+                    </p>
+                    <p style="padding-left: 1vh;" class="saira white descriptionSection">
+                        {{ this.product.Attributes.Pattern}}
+                    </p>
+                </li>
+                <li style="display:flex;">
+                    <p style="font-weight: 600 !important;color:orange" class="saira white descriptionSection">
+                        Load/Speed:
+                    </p>
+                    <p style="padding-left: 1vh;" class="saira white descriptionSection">
+                        {{ this.product.Attributes.Load_Speed}}
+                    </p>
+                </li>
+                <li style="display:flex;">
+                    <p style="font-weight: 600 !important;color:orange" class="saira white descriptionSection">
+                        Brand Category:
+                    </p>
+                    <p style="padding-left: 1vh;" class="saira white descriptionSection">
+                        {{ this.product.Attributes.BrandCategory}}
+                    </p>
+                </li>
+                <li style="display:flex;">
+                    <p style="font-weight: 600 !important;color:orange" class="saira white descriptionSection">
+                        Ply Rating:
+                    </p>
+                    <p style="padding-left: 1vh;" class="saira white descriptionSection">
+                        {{ this.product.Attributes.PlyRating}}
+                    </p>
+                </li>
+                <li style="display:flex;">
+                    <p style="font-weight: 600 !important;color:orange" class="saira white descriptionSection">
+                        Run On Float:
+                    </p>
+                    <p style="padding-left: 1vh;" class="saira white descriptionSection">
+                        {{ this.product.Attributes.RunOnFlat}}
+                    </p>
+                </li>
+                <li style="display:flex;">
+                    <p style="font-weight: 600 !important;color:orange" class="saira white descriptionSection">
+                        OE Sidewall:
+                    </p>
+                    <p style="padding-left: 1vh;" class="saira white descriptionSection">
+                        {{ this.product.Attributes.OESidewall}}
+                    </p>
+                </li>
+
+            </ul>
+        </div>
+
+        <div class="col md-3">
+            <ul>
+                <li style="display:flex;">
+                    <p style="font-weight: 600 !important;color:orange" class="saira white descriptionSection">
+                        Category:
+                    </p>
+                    <p style="padding-left: 1vh;" class="saira white descriptionSection">
+                        {{ this.product.Attributes.Category}}
+                    </p>
+
+                </li>
+                <li style="display:flex;">
+                    <p style="font-weight: 600 !important;color:orange" class="saira white descriptionSection">
+                        Season:
+                    </p>
+                    <p style="padding-left: 1vh;" class="saira white descriptionSection">
+                        {{ this.product.Attributes.Season}}
+                    </p>
+                </li>
+
+                <li style="display:flex;">
+                    <p style="font-weight: 600 !important;color:orange" class="saira white descriptionSection">
+                        Fuel Efficiency Rating:
+                    </p>
+                    <p style="padding-left: 1vh;" class="saira white descriptionSection">
+                        {{ this.product.Attributes.FuelEfficiencyRating}}
+                    </p>
+                </li>
+                <li style="display:flex;">
+                    <p style="font-weight: 600 !important;color:orange" class="saira white descriptionSection">
+                        Wet Grip Rating:
+                    </p>
+                    <p style="padding-left: 1vh;" class="saira white descriptionSection">
+                        {{ this.product.Attributes.WetGripRating}}
+                    </p>
+                </li>
+                <li style="display:flex;">
+                    <p style="font-weight: 600 !important;color:orange" class="saira white descriptionSection">
+                        Noise Rating (Db):
+                    </p>
+                    <p style="padding-left: 1vh;" class="saira white descriptionSection">
+                        {{ this.product.Attributes.NoiseRating_Db}}
+                    </p>
+                </li>
+                <li style="display:flex;">
+                    <p style="font-weight: 600 !important;color:orange" class="saira white descriptionSection">
+                        Noise Rating Class:
+                    </p>
+                    <p style="padding-left: 1vh;" class="saira white descriptionSection">
+                        {{ this.product.Attributes.NoiseRatingClass}}
+                    </p>
+                </li>
+                <li style="display:flex;">
+                    <p style="font-weight: 600 !important;color:orange" class="saira white descriptionSection">
+                        EU Tyre Class Reference:
+                    </p>
+                    <p style="padding-left: 1vh;" class="saira white descriptionSection">
+                        {{ this.product.Attributes.EUTyreClassReference}}
+                    </p>
+                </li>
+                <li style="display:flex;">
+                    <p style="font-weight: 600 !important;color:orange" class="saira white descriptionSection">
+                        Homologation:
+                    </p>
+                    <p style="padding-left: 1vh;" class="saira white descriptionSection">
+                        {{ this.product.Attributes.Homologation}}
+                    </p>
+                </li>
+
+            </ul>
+        </div>
+
+
+        <div class="col md-3">
+            <ul>
+                <li style="display:flex;">
+                    <p style="font-weight: 600 !important;color:orange" class="saira white descriptionSection">
+                        Mold ID:
+                    </p>
+                    <p style="padding-left: 1vh;" class="saira white descriptionSection">
+                        {{ this.product.Attributes.MoldID}}
+                    </p>
+
+                </li>
+                <li style="display:flex;">
+                    <p style="font-weight: 600 !important;color:orange" class="saira white descriptionSection">
+                        Self Seal:
+                    </p>
+                    <p style="padding-left: 1vh;" class="saira white descriptionSection">
+                        {{ this.product.Attributes.SelfSeal}}
+                    </p>
+                </li>
+
+                <li style="display:flex;">
+                    <p style="font-weight: 600 !important;color:orange" class="saira white descriptionSection">
+                        Tread Depth(mm):
+                    </p>
+                    <p style="padding-left: 1vh;" class="saira white descriptionSection">
+                        {{ this.product.Attributes.TreadDepth_mm}}
+                    </p>
+                </li>
+                <li style="display:flex;">
+                    <p style="font-weight: 600 !important;color:orange" class="saira white descriptionSection">
+                        Noise Cancelling:
+                    </p>
+                    <p style="padding-left: 1vh;" class="saira white descriptionSection">
+                        {{ this.product.Attributes.NoiseCancelling}}
+                    </p>
+                </li>
+                <li style="display:flex;">
+                    <p style="font-weight: 600 !important;color:orange" class="saira white descriptionSection">
+                        Prod Superseded By:
+                    </p>
+                    <p style="padding-left: 1vh;" class="saira white descriptionSection">
+                        {{ this.product.Attributes.ProdSupersededBy}}
+                    </p>
+                </li>
+                <li style="display:flex;">
+                    <p style="font-weight: 600 !important;color:orange" class="saira white descriptionSection">
+                        Prod Supersedes:
+                    </p>
+                    <p style="padding-left: 1vh;" class="saira white descriptionSection">
+                        {{ this.product.Attributes.ProdSupersedes}}
+                    </p>
+                </li>
+                <li style="display:flex;">
+                    <p style="font-weight: 600 !important;color:orange" class="saira white descriptionSection">
+                        Rim Protection:
+                    </p>
+                    <p style="padding-left: 1vh;" class="saira white descriptionSection">
+                        {{ this.product.Attributes.RimProtection}}
+                    </p>
+                </li>
+                <li style="display:flex;">
+                    <p style="font-weight: 600 !important;color:orange" class="saira white descriptionSection">
+                        Product Weight (Kg):
+                    </p>
+                    <p style="padding-left: 1vh;" class="saira white descriptionSection">
+                        {{ this.product.Attributes.ProductWeight_Kg}}
+                    </p>
+                </li>
+
+            </ul>
+        </div>
+
+    </div>
+
+
+
+</div>
+</div>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-127299225-1"></script>
+<script>
+ window.dataLayer = window.dataLayer || [];
+ function gtag(){dataLayer.push(arguments);}
+ gtag('js', new Date());
+
+ gtag('config', 'UA-127299225-1');
+</script>

@@ -1,0 +1,137 @@
+
+.title{
+    margin-top:50px;
+    
+}
+
+.orange{
+    color:orange;
+}
+
+.white{
+    color:white;
+}
+
+
+
+.saira{
+    font-family: 'Saira', sans-serif;
+    letter-spacing: 0px;
+    word-spacing: 0px;
+    font-weight: 500;
+    text-decoration: none;
+    text-transform: none;
+}
+
+.titleSection{
+    font-size: 28px;
+    font-weight: 600 !important;
+}
+
+.descriptionSection{
+
+    font-size: 18px;
+    font-style:italic;
+}
+
+.subtitleSection{
+    padding-top:3vh;
+    font-size: 25px;
+    font-weight: bold !important;
+}
+
+.car{
+
+    background:#1c1c1c;
+  }
+
+  ul {
+    list-style: none;
+    padding-left:0;
+      }
+    
+      li{
+          font-style:italic;
+          font-size:18px;
+         
+          
+      }
+
+      .buttonOrange{
+        background:#f57c00;
+        color:white;
+        font-weight: 500;
+       border-radius: 2px;
+       outline: #f57c00;
+    }
+
+    .imgView{
+       margin-right: 10px;
+       margin-top:10px;
+       cursor: pointer;
+    //    animation: 1s fadeIn;
+    //    animation-fill-mode: forwards;
+       
+      // visibility: hidden;
+       &:hover{
+        // outline: 2px solid orange !important;
+        filter: brightness(0.5);
+       }
+    
+
+           }
+
+           @keyframes delayedShow {
+            to {
+              visibility: visible;
+            }
+          }
+          
+          .delayedShow{
+            visibility: hidden;
+            animation-fill-mode: forwards;
+            animation: 0.5s linear 1s forwards delayedShow ;
+            transition: opacity 500ms, display 0ms ease 500ms;
+        }
+
+
+    .imCarousel{
+        min-width:500px !important;
+        min-height:300px !important;
+        max-height: 300px !important;
+        max-width: 500px !important;
+        margin:0 !important;
+        padding:0 !important;
+    }
+
+    ::ng-deep .mat-dialog-container {
+        padding: 0 !important;
+    }
+
+    .panel {
+        .mat-dialog-container {
+            padding: 0 !important;
+        }
+    }
+
+    @media (max-width:600px){
+        .imCarousel{
+            min-width:280px !important;
+            min-height:150px !important;
+            max-height: 150px !important;
+            max-width: 280px !important;
+            margin:0 !important;
+            padding:0 !important;
+        }
+    }
+
+    @media (max-width: 475px) { 
+        .title{
+            margin-top:30px;
+            
+        }
+        .row{
+            justify-content: center;
+        }
+    
+    }

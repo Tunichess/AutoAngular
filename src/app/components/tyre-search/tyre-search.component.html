@@ -1,0 +1,119 @@
+<app-steps></app-steps>
+<div class="content" style="justify-content: center;margin-top:0;padding-top: 0;">
+  <div style="text-align: center;background: #1c1c1c;">
+    <img *ngIf="loading" style="justify-content: center" width="64" height="64" src="../../../assets/loading2.gif">
+  </div>
+  <div *ngIf="!loading" class="filt">
+    <div class="container">
+      <div class="row" style="justify-content: center;">
+        <h3 class="saira white">Search tool for tyres</h3>
+      </div>
+      <div class="filter-container row" style="justify-content: center;" [formGroup]="filters">
+        <!-- <div class="contFilt">  -->
+        <div class="filter col-sm-12 col-md-1">
+          <label class="saira white" style="margin-top: 2vh;">Width</label>
+          <input (keypress)="numbersOnly($event)" class="filterField" formControlName="width" />
+          <span *ngIf="messageWidth" style="color:red" class="saira">Please fill Width</span>
+        </div>
+        <div class="filter col-sm-12 col-md-1">
+          <label class="saira white" style="margin-top: 2vh;">Ratio</label>
+          <input (keypress)="numbersOnly($event)" class="filterField" formControlName="ratio" />
+          <span *ngIf="messageRatio" style="color:red" class="saira">Please fill Ratio</span>
+        </div>
+        <div class="filter col-sm-12 col-md-1">
+          <label class="saira white" style="margin-top: 2vh;">Rim</label>
+          <input (keypress)="numbersOnly($event)" class="filterField" formControlName="rim" />
+          <span *ngIf="messageRim" style="color:red" class="saira">Please fill Rim</span>
+        </div>
+        <!-- <div class="filter col-sm-12 col-md-1">
+          <label class="saira white" style="margin-top: 2vh;">Speed</label>
+          <input type="number" class="filterField" formControlName="speed" />
+        </div> -->
+
+        <!-- <div class="filter col-sm-12 col-md-2">
+          <label class="saira white" style="margin-top: 2vh;">Brand</label>
+          <select class="custom-select filterField" id="inputGroupSelect01" formControlName="brand">
+            <option selected value="Select">Select</option>
+            <option *ngFor=" let i of Brands" [value]="i">{{i}}</option>
+          </select>
+        </div> -->
+
+        <div class="filter col-sm-12 col-md-2 search-button">
+          <label style="margin-top: 30px;"></label>
+          <a class="saira" (click)="filter()">SEARCH<i class="material-icons pad">search</i></a>
+        </div>
+        <div class="filter col-sm-12 col-md-2 search-button">
+          <label style="margin-top: 30px;"></label>
+          <a class="saira" style="text-decoration: none;" [routerLink]="['/cart']">VIEW CART</a>
+        </div>
+      </div>
+      <div class="saira white" style="text-align: center;">
+        Unsure where to find your tyre size? <a style="cursor:pointer">
+
+          <span (click)="openModal()" style="color:#f57c00;">
+            Click here for more information.</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="!loading" class="products">
+    <div class="items animated fadeIn">
+      <div class="row" style="justify-content: center;">
+        <div class="card cardContent col-md-3" *ngFor="let i of this.ShowingList">
+          <!-- <img src="data:image/png;base64,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" class="card-img-top" alt="..."> -->
+          <div class="card-body">
+            <h5 class="card-title saira">{{ i.DescriptionShort }}</h5>
+
+            <ul class="list-group list-group-flush" style="margin-left: 0; padding-left: 0;">
+              <li class="list-group-item saira" style="font-weight: 500;">
+                {{ i.Attributes.Brand }}
+              </li>
+              <li class="list-group-item saira" style="font-weight: 500;">
+                {{ i.Attributes.Category }}
+              </li>
+              <li class="list-group-item saira" style="font-weight: 500;">
+                {{ i.Price  |currency:"GBP":"symbol" }}
+              </li>
+            </ul>
+            <div class="button-container">
+              <button [routerLink]="['/product',i.ProductCode]" type="button" class="btn btn-outline-warning saira">
+                MORE INFO
+              </button>
+              <button (click)="addProduct(i)" type="button" class="btn btn-outline-warning saira">
+                ADD TO CART <i class="material-icons pad">add_shopping_cart</i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div *ngIf="!loading " class="row" style="justify-content: center !important;padding-top:35px;background: #1c1c1c;">
+    <a class="btn buttonOrange " *ngIf="Results.length>0" (click)="loadMore()"
+      style="width:200px;justify-content: space-around;">
+      <div class="saira white" style="margin-bottom:0;margin-top: 2px;">LOAD MORE
+
+      </div>
+    </a>
+  </div>
+
+
+  <h3 *ngIf=" !loading && Results.length<1" class="saira white"
+    style="text-align: center;background:#1c1c1c;margin:0;font-size:22px">
+    No results found!
+  </h3>
+
+
+</div>
+
+<div style="height: 30px;background:#1c1c1c;">
+</div>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-127299225-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'UA-127299225-1');
+</script>

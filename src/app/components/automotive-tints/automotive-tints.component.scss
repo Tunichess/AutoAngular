@@ -1,0 +1,118 @@
+
+.title{
+    margin-top:50px;
+    
+}
+
+.orange{
+    color:orange;
+}
+
+.white{
+    color:white;
+}
+
+
+
+.saira{
+    font-family: 'Saira', sans-serif;
+    letter-spacing: 0px;
+    word-spacing: 0px;
+    font-weight: 500;
+    text-decoration: none;
+    text-transform: none;
+}
+
+.car{
+
+    background:#1c1c1c;
+  }
+
+  ul {
+    list-style: none;
+    padding-left:0;
+      }
+    
+      li{
+          font-style:italic;
+          font-size:18px;
+         
+          
+      }
+
+      .buttonOrange{
+        background:#f57c00;
+        color:white;
+        font-weight: 500;
+       border-radius: 2px;
+       outline: #f57c00;
+    }
+
+    .titleSection{
+        text-align: center;
+        font-weight: bold;
+        font-size:40px;
+        padding-bottom:20px;
+        padding-top:10px;
+    }
+
+
+    .subtitleSection{
+        padding-top:2vh;
+        font-size: 20px;
+        font-weight: bold !important;
+    }
+
+.descriptionSection{
+
+    font-size: 18px;
+    text-align: center;
+}
+
+.item{
+    justify-content: space-between;
+    border-bottom: 1px solid white;
+    margin-left:10px;
+    margin-right:5px;
+    // border-top: 1px solid white;
+}
+.img-fluid_1 { 
+    height: 100%;
+  }
+
+.colImage{
+    flex: 0 0 50%;
+    max-width: 50%;
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    //  margin-left:20px !important;
+ 
+}
+
+.mh{
+    max-height: 300px ;
+}
+
+@media (max-width:600px){
+    .text{
+        max-width: 200px;
+    }
+
+    
+    .none{
+        display:none;
+    }
+.colImage{
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-left:0;
+}
+
+.mh{
+    max-height:224px;
+    min-height: 224px;
+}
+}

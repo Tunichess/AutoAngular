@@ -1,0 +1,140 @@
+.title{
+    margin-top:60px;
+    
+}
+p{
+    color:white;
+    
+  }
+
+.orange{
+    color:orange;
+}
+
+.white{
+    color:white;
+}
+
+.sizeTitle{
+    font-size: 22px;
+}
+
+.saira{
+    font-family: 'Saira', sans-serif;
+    letter-spacing: 0px;
+    word-spacing: 0px;
+    font-weight: 500;
+    text-decoration: none;
+    text-transform: none;
+}
+
+.img-fluid_1 { 
+    height: 100%;
+  }
+
+.buttonOrange{
+    background:#f57c00;
+    color:white;
+    font-weight: 500;
+   border-radius: 2px;
+   outline: #f57c00;
+}
+
+ul {
+list-style: none;
+padding-left:0;
+  }
+
+  li{
+      font-style:italic;
+      font-size:18px;
+     
+      
+  }
+
+  .car{
+    //   background-image: url("./../../../assets/background.jpg");
+    //   background-attachment: fixed;
+    //   background-size:     cover;                      /* <------ */
+    //   background-repeat:   no-repeat;
+    //   background-position: cover; 
+    //   width:auto;
+    //   height:auto;
+    background:#1c1c1c;
+  }
+hr{
+    color:white;
+}
+
+//   @media (max-width: 900px) { 
+//     .car{
+//     background-position: center;
+//     }
+//   }
+
+//   @media (max-width: 475px) { 
+//     .car{
+
+//     }
+//   }
+
+.image{
+    margin-top:92px;
+    background-image: url("../../../assets/backgroundtitle.png");
+    // background-position: center;
+    background-repeat: cover;
+    height:180px;
+    text-align: center;
+
+}
+.background{
+    background-color: rgba(244, 158, 0, 0.91);
+    height:180px;
+}
+
+ .title{
+    margin-top:50px;
+    
+ }
+
+.mh{
+    max-height: 300px;
+    min-height: 300px;
+}
+
+.titleSection{
+    padding-top: 35px;
+    font-size: 22px;
+    font-weight: 600 !important;
+}
+
+@media (max-width: 992px) {
+    .image{
+        margin-top:57px;
+    }
+}
+
+@media (max-width: 900px) { 
+      
+    .titleSection{
+        padding-top: 25px;
+        font-size: 22px;
+        font-weight: 600 !important;
+    }
+     
+      }
+
+    @media (max-width: 700px) { 
+      
+        .titleSection{
+            padding-top: 10px;
+            font-size: 16px;
+            font-weight: 600 !important;
+        }
+
+        .mh{
+            max-height: 224px;
+            min-height: 224px;
+        }
+         
+          }

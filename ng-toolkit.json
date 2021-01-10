@@ -1,0 +1,15 @@
+{
+  "serverless": {
+    "provider": "aws",
+    "project": "ecommerce",
+    "skipInstall": false,
+    "directory": ".",
+    "lambdaTS": false,
+    "offline": false,
+    "clientProject": "ecommerce",
+    "serverless": {
+      "aws": {},
+      "gcloud": {}
+    }
+  }
+}
